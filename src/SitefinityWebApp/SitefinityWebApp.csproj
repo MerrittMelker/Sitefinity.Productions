@@ -897,17 +897,13 @@
     <Content Include="App_Data\RadSpell\fr-FR.tdf" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProductsIntegrationTests\ProductsIntegrationTests.csproj">
-      <Project>{1ff70e2f-139e-47ab-97fe-514194929ece}</Project>
-      <Name>ProductsIntegrationTests</Name>
+    <ProjectReference Include="..\ProductionsModule\ProductionsModule.csproj">
+      <Project>{F6E21A1E-1CD1-451B-B7B1-13FE56F0F4FC}</Project>
+      <Name>ProductionsModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\Telerik.Sitefinity.Samples.Common\Telerik.Sitefinity.Samples.Common.csproj">
       <Project>{CF03FB62-A8CC-42B4-9C81-87920C530D74}</Project>
       <Name>Telerik.Sitefinity.Samples.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Products\ProductCatalogSample.csproj">
-      <Project>{A0D6FE42-63FA-464F-83FA-496F22ED3908}</Project>
-      <Name>ProductCatalogSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
