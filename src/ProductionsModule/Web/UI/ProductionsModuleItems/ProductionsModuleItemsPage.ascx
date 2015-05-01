@@ -16,7 +16,7 @@
     <AjaxSettings>
         <telerik:AjaxSetting AjaxControlID="ProductionsModuleItemsMaster">
             <UpdatedControls>
-                <telerik:AjaxUpdatedControl ControlID="ProductionsModuleItemsMaster"></telerik:AjaxUpdatedControl>
+                <telerik:AjaxUpdatedControl ControlID="ProductionsModuleItemsMaster" LoadingPanelID="RadAjaxLoadingPanel1"></telerik:AjaxUpdatedControl>
             </UpdatedControls>
         </telerik:AjaxSetting>
     </AjaxSettings>
@@ -38,8 +38,8 @@
         <div class="sfWorkArea" id="workArea">
             <div runat="server">
                 <telerik:RadGrid ID="ProductionsModuleItemsMaster" ClientIDMode="AutoID" runat="server" DataSourceID="productionsModuleItemsDataSource" ClientSettings-Selecting-EnableDragToSelectRows="false"
-                    AllowPaging="true" AllowCustomPaging="true" AutoGenerateColumns="false" AllowMultiRowSelection="true" OnDataBound="ProductionsModuleItemsGrid_DataBound" >
-                    <MasterTableView CssClass="rgTopOffset rgMasterTable">
+                    AllowFilteringByColumn="True" AllowPaging="true" AllowCustomPaging="true" AllowSorting="True" AutoGenerateColumns="false" AllowMultiRowSelection="true" OnDataBound="ProductionsModuleItemsGrid_DataBound" >
+                    <MasterTableView CssClass="rgTopOffset rgMasterTable" AllowFilteringByColumn="True" >
                         <Columns>
                              <telerik:GridTemplateColumn HeaderText='Production Season #' ItemStyle-CssClass="sfLarge">
                                 <ItemTemplate>
@@ -61,6 +61,7 @@
                                     <div class="dmDescription"><%# Eval("last_dt", "{0:d}") %></div>
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>
+                            <telerik:GridCheckBoxColumn UniqueName="Enabled" HeaderText="Enabled" AllowSorting="true"></telerik:GridCheckBoxColumn>
                         </Columns>
                     </MasterTableView>
                     <PagerStyle Mode="NumericPages" />
@@ -71,6 +72,7 @@
                     SelectMethod="GetItems" TypeName="ProductionsModule.Web.Services.ProductionsModuleItems.ProductionsModuleItemsService">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="sortExpression" PropertyName="Value" Direction="Input" Name="sortExpression" Type="String" />
+                        <asp:Parameter />
                     </SelectParameters>
                     <DeleteParameters>
                         <asp:Parameter Name="ids" Direction="Input" Type="String" />
